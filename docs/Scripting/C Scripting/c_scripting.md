@@ -88,6 +88,29 @@ void yoyo_register_callbacks() {
 
 With this, when the `example` scene is loaded, the `game_logic_callback` will be called every frame. For other scenes, nothing will happen.
 
+## List of available callback events
+
+Here is a snippet from :simple-github: [yoyoengine/engine/dist/include/yoyoengine/event.h](https://github.com/yoyoengine/yoyoengine/blob/main/engine/dist/include/yoyoengine/event.h) that lists all of the available events you can subscribe to.
+
+```c
+enum ye_event_type {
+    YE_EVENT_PRE_INIT,          // empty_cb
+    YE_EVENT_POST_INIT,         // empty_cb
+    YE_EVENT_HANDLE_INPUT,      // input_cb
+    YE_EVENT_LUA_REGISTER,      // lua_cb
+    YE_EVENT_PRE_FRAME,         // empty_cb
+    YE_EVENT_POST_FRAME,        // empty_cb
+    YE_EVENT_SCENE_LOAD,        // scene_load_cb
+    YE_EVENT_COLLISION,         // collision_cb
+    YE_EVENT_TRIGGER_ENTER,     // collision_cb
+    YE_EVENT_PRE_SHUTDOWN,      // empty_cb
+    YE_EVENT_POST_SHUTDOWN,     // empty_cb
+    YE_EVENT_ADDITIONAL_RENDER, // empty_cb
+
+    YE_EVENT_CUSTOM,    // void * data, user defined event
+};
+```
+
 ## Exposing your own API to Lua
 
 An awesome benefit of C scripting, is that you can implement some performance intensive or hyper specific functionality in C, and then expose it to Lua.

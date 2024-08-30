@@ -1,6 +1,6 @@
 site_name: yoyoengine docs
-site_url: https://zoogies.github.io/yoyoengine/
-repo_url: https://github.com/zoogies/yoyoengine
+site_url: https://yoyoengine.github.io/docs/
+repo_url: https://github.com/yoyoengine/docs
 edit_uri: edit/main/docs/
 theme:
   language: en
@@ -62,7 +62,7 @@ extra:
     provider: mike
   social:
     - icon: material/github
-      link: https://github.com/zoogies/yoyoengine
+      link: https://github.com/yoyoengine
   tags:
     lua: lua
     c: c
@@ -81,7 +81,7 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
   - git-committers:
-      repository: zoogies/yoyoengine
+      repository: yoyoengine/docs
       branch: main
   - tags:
       tags_file: tags.md 
@@ -110,11 +110,10 @@ nav:
   - Feature Overview:
     - Plugins: Feature Overview/plugins.md
   - Scripting:
-  #   - Scripting/C Scripting/c_scripting.md
     - Lua Scripting:
       - Scripting/Lua Scripting/overview.md
       - Scripting/Lua Scripting/systems.md
     - C Scripting:
       - Scripting/C Scripting/c_scripting.md
-  #     # - Scripting/Lua Scripting/c_scripting.md
   - networking.md
+  - rendering.md

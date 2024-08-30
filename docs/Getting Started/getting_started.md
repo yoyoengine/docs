@@ -1,34 +1,39 @@
 # Getting Started
 
-The reccomended way to use yoyoengine is via a submodule inside your main git project, where you build and run the tooling yourself.
+The best way to download yoyoengine, is to install the :simple-github: [yoyoengine hub](https://github.com/yoyoengine/launcher) and use it to manage your editor installations.
 
-In the future I might release standalone versions of the editor and launcher, but by the nature of yoyoengine, you will probably want to hack on the core engine itself at some point.
+
+!!! warning
+    yoyoengine is under ***active development*** and may be unstable. Your bug reports help!
+
+![yoyoengine hub](https://raw.githubusercontent.com/yoyoengine/launcher/main/.github/media/gui_example.png)
+
+Check out the above repo for additional installation methods, but here is a one liner to install on linux:
+
+```bash
+curl -sL https://raw.githubusercontent.com/yoyoengine/launcher/main/install.sh | sudo bash
+```
 
 ## Dependencies
 
-There are a few "hard" dependencies for yoyoengine, which are:
+The launcher should warn you if you are missing any dependencies, but here is a command to install the necessary packages for debian based systems:
 
-- A C compiler, CMake, Make, and git
+```bash
+sudo apt update && sudo apt install git cmake make gcc g++ curl zenity
+```
 
-But there are also some "soft" dependencies which are:
+If you wish to build for windows and web, you will also need to install the following packages:
 
-- curl
-- zenity
+```bash
+sudo apt install mingw-w64 g++-mingw-w64 gcc-mingw-w64
+```
 
-These "soft" dependencies will cause runtime "errors" if they are not present, but everything will still work as expected.
+As well as [emscripten](https://emscripten.org/docs/getting_started/downloads.html) for web builds.
 
-For example, yoyoeditor uses curl to check for updates against github, but if curl is not installed you will simply see "curl is not installed." in the console without any other issues.
+## Wrap up
 
-These are typically installed on every linux system by default, so you shouldn't have to worry about them.
+Once you've installed the hub, you can launch it and click "install" on your preferred version of yoyoeditor. The hub will then download and install it, and from there you can launch it directly from the hub.
 
-## Adding yoyoengine
+After launching yoyoeditor, it should be self explanatory to create and build a project. If you have any questions, feel free to ask in the :simple-github: [yoyoengine editor](https://github.com/yoyoengine/yoyoeditor) repo!
 
-1. Create a new git repo
-2. Run the command `git submodule add https://github.com/zoogies/yoyoengine.git` in the root of the project
-3. Navigate into `/yoyoengine/editor` and run `build_linux.sh` to create the editor binary
-4. Navigate into `/yoyoengine/launcher` and run the command `python3 launcher.py` to open the project manager
-5. Using the project manager, select the location of the editor binary, and then create a new project inside your repo
-6. The editor should automatically launch into a default scene. Done!
-
-!!! info
-    This method relies on you having the necessary python dependencies installed on your system for the launcher. You can just as easily create a new folder, and copy over `yoyoengine/launcher/template/*` to get a base project.
+Please note, **this documentation is by no means exhaustive or comprehensive**. Please feel free to reach out for help or clarification on anything. I'm more than happy to help you out!

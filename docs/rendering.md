@@ -23,16 +23,5 @@ void ye_debug_rect(int x, int y, int w, int h, SDL_Color color);
 ## additional rendering outside of ECS entities
 
 For many games, you might also want the ability to render things that are outside of the scope of ECS entities. For example, you might want to render a custom HUD or a menu that arent defined by entities in the scene.
-To do so, you can create a C function that contains your own SDL based rendering logic, and then subscribe the engine to it.
 
-### C API
-
-```c
-/**
- * @brief Registers a callback to be called every frame after the ECS renderer.
- * 
- * @param callback The function to call
- * @param persistant If true, the callback will not be destroyed on scene load events.
- */
-void ye_render_callback(void (*callback)(), bool persistant);
-```
+To do this, check out the [C scripting docs](Scripting/C%20Scripting/c_scripting.md), specifically the section on callbacks.
